@@ -1,0 +1,23 @@
+{
+  "name": "cloze-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "basic_card.js",
+  "dependencies": {
+    "inquirer": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morgangreenwalt/cloze-cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morgangreenwalt/cloze-cards/issues"
+  },
+  "homepage": "https://github.com/morgangreenwalt/cloze-cards#readme"
+}
