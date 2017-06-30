@@ -5,20 +5,53 @@ var fs = require('fs');
 
 inquirer.prompt([
 	{
+		name: "playMessage",
 		type: "list",
-	    message: "Play Basic of Cloze-Deleted Flash Cards",
-	    choices: ["Basic", "Cloze-Deleted"],
-	    name: "playMessage"
+	    message: "What do you want to play?",
+	    choices: ["Basic", "Cloze-Deleted"]
 	},
+
 	{
+	    name: "frontCardBasic",
 	    type: "input",
 	    message: "Add your question for the front of your card",
-	    name: "frontCard"
+	    when: function(answers) {
+            return answers.playMessage === "Basic"
+        }
   	},
+
   	{
+	    name: "backCardBasic",
 	    type: "input",
 	    message: "Add your answer for the back of your card",
-	    name: "backCard"
+	    when: function(answers) {
+            return answers.frontCardBasic
+        }
+  	},
+  	{
+	    name: "frontCardCloze",
+	    type: "input",
+	    message: "Add your question for the front of your card",
+	    when: function(answers) {
+            return answers.playMessage === "Cloze-Deleted"
+        }
+  	},
+
+  	{
+	    name: "textProperty",
+	    type: "input",
+	    message: "Add the full answer to the question",
+	    when: function(answers) {
+            return answers.frontCardCloze
+        }
+  	},
+  		{
+	    name: "clozeProperty",
+	    type: "input",
+	    message: "Add only the text you'd like to be 'cloze-deleted'",
+	    when: function(answers) {
+            return answers.textProperty
+        }
   	}
 
 ]).then(function(user){
