@@ -1,14 +1,19 @@
+var fs = require('fs');
 
-function ClozeCard(text, cloze, partial, fullText){
-	this.text = text;
-	this.cloze = cloze;
-	this.partial = partial;
+function ClozeCard(fullText, cloze, partial){
 	this.fullText = fullText;
+	this.cloze = cloze;
+	this.partial = this.fullText.replace(cloze, "_____");
 	this.errorFunc = function(){
 			console.log("Something went wrong!")
 	}
+	this.showCardCloze = function(){
+		console.log("You've successfully made a cloze card!");
+		console.log("Partial text: "+ this.partial)
+		console.log("Cloze (hidden) text: "+ this.cloze);
+		console.log("Full text: "+ this.fullText);
+		console.log("======================================");
+	}
 }
-
-// var newClozeCard = new ClozeCard("George Washington was the first president of the USA.", "George Washington");
 
 module.exports = ClozeCard;

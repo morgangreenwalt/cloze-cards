@@ -1,25 +1,14 @@
-
+var fs = require('fs');
 
 function BasicCard(front, back){
 	this.front = front;
 	this.back = back;
-	this.printFront = function(){
-		console.log(front);
-	}
-	this.printBack = function(){
-		console.log(front);
-	}
-	this.printBasicCards = function(){
-		console.log(front);
-		console.log(back);
+	this.showCardBasic = function(){
+		console.log("You've successfully made a basic card!");
+		console.log("Front of card: "+ this.front);
+		console.log("Back of card: "+ this.back);
+		console.log("======================================");
 	}
 }
 
-// var newBasicCard = new BasicCard("Who was the first president of the USA?", "George Washington");
-
-// var newBasicCard2 = new BasicCard("Who was the second president of the USA?", "Abe Lincoln");
-
 module.exports = BasicCard;
-
-
-
