@@ -1,4 +1,4 @@
-Cloze Cards Node App
+Cloze Cards
 -------
 
 An interactive node application that takes in a user question and creates a guessing game - either basic or challenging (aka cloze).
